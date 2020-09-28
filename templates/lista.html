@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block pokemones %}
+    {% if n %}
+
+
+        <div class="col-4 p-2 offset-md-4">
+            <div class="card" style="width:300px">
+                <img class="card-img-top" src="{{ i }}" style="width: 100%; height: 238px;"">
+            <div class="card-body">
+                <h6 style="text-align: center;" class="card-title"><b>{{ n }}</b></h6>
+                <p class="card-title"><b>Peso:</b> {{ p }}</p>
+                <p class="card-title"><b>Habilidad:</b> {{ h }}</p>
+                <p class="card-title"><b>Altura:</b> {{ a }}</p>
+                <p class="card-text"><b>Tipo:</b> {{ t }}</p>
+               
+                <a href="{{url_for('index')}}" class="btn btn-primary btn-block">Volver al inicio</a>
+            </div>
+        </div>
+        </div>
+
+    {% endif %}
+
+    {% if n == None and p== False %}
+
+
+    <div class="col-4 p-2 offset-md-4">
+    <div class="card" style="width:400px">
+    <div class="alert alert-warning" role="alert">
+        <h4 class="alert-heading">Ese pokemon no existe!</h4>
+        <p>Intente con otro pokemon</p>
+        <hr>
+        <p class="mb-0">Talvez se equivoco</p>
+        <hr>
+        <a href="{{url_for('index')}}" class="btn btn-primary btn-block">Volver al inicio</a>
+    </div>
+    </div>
+    </div>
+    
+    {% endif %}
+
+{% endblock %}
+
+

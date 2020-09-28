@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="row">
+  <div class="col-md-5 offset-md-4">
+    <div class="card card-body">
+      <form method="POST" action="{{url_for('lista')}}">
+        <div class="form-group">
+          <input type="text" class="form-control" name="nombre_pokemon" placeholder="Escriba el nombre del pokemon">
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-block">
+            Buscar Pokemon
+          </button>
+        </div>
+      </form>    
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+{% endblock body %}
