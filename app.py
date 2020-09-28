@@ -11,7 +11,6 @@ app = Flask(__name__)
 app.secret_key = "mysecretkey"
 app.url_map.strict_slashes = False
 
-
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -47,11 +46,11 @@ def lista():
 
             img = buscar_informacion['sprites']['front_default']     
 
-            return render_template('lista.html', n=nombre, p=peso, h=habilidad, a=altura, t=tipo, i=img)
+            return render_template('lista.html', nombre=nombre, p=peso, h=habilidad, a=altura, t=tipo, i=img)
         else:
-            return render_template('lista.html', n=None, p=False)
+            return render_template('lista.html', nombre=None)
     except:
-        return render_template('lista.html', n=None, p=False)
+        return render_template('lista.html', nombre=None)
 
 
 app.run(debug=True)
