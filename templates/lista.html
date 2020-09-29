@@ -3,9 +3,9 @@
 {% block pokemones %}
 {% if nombre %}
 
-<div class="card offset-md-4" style="width:400px">   
-    <div class=" card-body">
-        <img class="rounded mx-auto d-block" src="{{ i }}" style="width: 100px; height: 100px;">
+<div class="card" style="width:400px;">   
+    <div class="card-body">
+        <img class="rounded mx-auto d-block" src="{{ i }}" style="width: 100px; height: 100px; text-align: center;" alt="{{ estadoFoto }}">
         <h6 style="text-align: center;" class="card-title"><b>{{ nombre }}</b></h6>
         <p class="card-title"><b>Peso:</b> {{ p }}</p>
         <p class="card-title"><b>Habilidad:</b> {{ h }}</p>
@@ -17,18 +17,14 @@
 {% endif %}
 
 {% if nombre == None %}
-<div class="col-4 p-2 offset-md-4">
-    <div class="card" style="width:400px">
-        <div class="alert alert-warning" role="alert">
-            <h4 class="alert-heading">Ese pokemon no existe!</h4>
-            <p>Intente con otro pokemon</p>
-            <hr>
-            <p class="mb-0">Talvez se equivoco</p>
-            <hr>
-            <a href="{{url_for('index')}}" class="btn btn-primary btn-block">Volver al inicio</a>
-        </div>
+    <div class="alert alert-warning" role="alert">
+    <h4 class="alert-heading">Ese pokemon no existe!</h4>
+        <p>Intente con otro pokemon</p>
+        <hr>
+        <p class="mb-0">Talvez se equívoco</p>
+        <hr>
+        <a href="{{url_for('index')}}" class="btn btn-primary btn-block">Volver al inicio</a>
     </div>
-</div>
 {% endif %}
 
 {% endblock %}

@@ -31,7 +31,6 @@ def lista():
         buscar_informacion = json.loads(response.read())
 
         if nombre_pokemon == buscar_informacion['name']:
-            print("Si")
             nombre = buscar_informacion['name']
             nombre = nombre.capitalize()
             peso = buscar_informacion['weight']
@@ -44,14 +43,19 @@ def lista():
             tipo = buscar_informacion['types'][0]['type']['name']
             tipo = tipo.capitalize()
 
-            img = buscar_informacion['sprites']['front_default']     
+            img = buscar_informacion['sprites']['front_default']  
 
-            return render_template('lista.html', nombre=nombre, p=peso, h=habilidad, a=altura, t=tipo, i=img)
+            estadoFoto = '' 
+            if img == None:
+                estadoFoto = 'No hay foto'
+
+            return render_template('lista.html', nombre=nombre, p=peso, h=habilidad, a=altura, t=tipo, i=img,estadoFoto=estadoFoto)
         else:
             return render_template('lista.html', nombre=None)
     except:
         return render_template('lista.html', nombre=None)
 
 if __name__ == '__main__':
-    app.run()
+    #app.run()
+    app.run(debug=True)
     

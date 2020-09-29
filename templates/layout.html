@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Pokemones</title>
-
+  <link rel="icon" type="image/ico" href="{{url_for('static', filename='pikachu.ico')}}" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
 <style>
@@ -16,6 +16,7 @@
     background: linear-gradient(to right, #2B32B2, #1488CC);
     font-size: 20px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
 
   }
 
@@ -28,13 +29,13 @@
     <a class="navbar-brand" href="/" style="color: #ffff;">Inicio</a>
   </nav>
 
-  <div class="container pt-5">
+  <div class="container pt-5 justify-content-center align-item-center">
     {% block body %}
     {% endblock %}
   </div>
 
   <div class="container">
-    <div class="row align-items-start">
+    <div class="row justify-content-center align-item-center">
       {% block pokemones %}
       {% endblock %}
     </div>
