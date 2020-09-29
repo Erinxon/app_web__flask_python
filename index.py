@@ -53,5 +53,5 @@ def lista():
         return render_template('lista.html', nombre=None)
 
 if __name__ == '__main__':
-    #app.run()
-    app.run(debug=True)
+    app.run()
+    
