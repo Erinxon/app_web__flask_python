@@ -2,10 +2,10 @@
 
 {% block pokemones %}
 {% if nombre %}
-<div class="col-4 p-2 offset-md-4">
-    <div class="card" style="width:300px">
-    <img class="card-img-top" src="{{ i }}" style="width: 100%; height: 238px;"">
+
+<div class="card offset-md-4" style="width:400px">   
     <div class=" card-body">
+        <img class="rounded mx-auto d-block" src="{{ i }}" style="width: 100px; height: 100px;">
         <h6 style="text-align: center;" class="card-title"><b>{{ nombre }}</b></h6>
         <p class="card-title"><b>Peso:</b> {{ p }}</p>
         <p class="card-title"><b>Habilidad:</b> {{ h }}</p>
@@ -13,7 +13,6 @@
         <p class="card-text"><b>Tipo:</b> {{ t }}</p>
         <a href="{{url_for('index')}}" class="btn btn-primary btn-block">Volver al inicio</a>
     </div>
-</div>
 </div>
 {% endif %}
 
