@@ -20,6 +20,7 @@ def index():
 def lista():
     try:
         nombre_pokemon = request.form.get("nombre_pokemon")
+        nombre_pokemon = nombre_pokemon.lower()
         user_agent = 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.7) Gecko/2009021910 Firefox/3.0.7'
 
         url = "https://pokeapi.co/api/v2/pokemon/" + nombre_pokemon
@@ -51,9 +52,15 @@ def lista():
 
             return render_template('lista.html', nombre=nombre, p=peso, h=habilidad, a=altura, t=tipo, i=img,estadoFoto=estadoFoto)
         else:
-            return render_template('lista.html', nombre=None)
+            return render_template('error.html', nombre_pokemon=nombre_pokemon)
     except:
-        return render_template('lista.html', nombre=None)
+        return render_template('error.html', nombre_pokemon=nombre_pokemon)
+
+
+@app.route('/error')
+def error():
+    return render_template('error.html')
+
 
 if __name__ == '__main__':
     #app.run()

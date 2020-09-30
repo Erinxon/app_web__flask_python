@@ -2,7 +2,6 @@
 
 {% block pokemones %}
 {% if nombre %}
-
 <div class="card" style="width:400px;">   
     <div class="card-body">
         <img class="rounded mx-auto d-block" src="{{ i }}" style="width: 100px; height: 100px; text-align: center;" alt="{{ estadoFoto }}">
@@ -15,16 +14,4 @@
     </div>
 </div>
 {% endif %}
-
-{% if nombre == None %}
-    <div class="alert alert-warning" role="alert">
-    <h4 class="alert-heading">Ese pokemon no existe!</h4>
-        <p>Intente con otro pokemon</p>
-        <hr>
-        <p class="mb-0">Talvez se equívoco</p>
-        <hr>
-        <a href="{{url_for('index')}}" class="btn btn-primary btn-block">Volver al inicio</a>
-    </div>
-{% endif %}
-
 {% endblock %}
